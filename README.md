@@ -1,31 +1,99 @@
-# 🎧 AI Podcast Summariser & Newsletter Service
+# 🎧 Podcast Summariser
 
-A lightweight Flask microservice that lets users subscribe to podcast RSS feeds. For each new episode, the app transcribes the audio using AI, generates a concise summary with GPT, and sends it to all subscribers via Mailchimp.
+A simple Flask web application that allows users to submit podcast links or audio files, and returns concise summaries using AI-driven APIs.
+
+---
 
 ## 🚀 Features
 
-- 🔐 User signup with podcast URL subscription
-- 🎙️ Automatic RSS feed polling for new episodes
-- 🧠 AI transcription (via Whisper) and summarisation (via GPT)
-- 📬 Mailchimp integration for email list management and newsletter campaigns
-- 🧩 Bootstrap-styled web interface with a modular Flask backend
-- 💾 SQLite for quick local development
+- Submit podcast URLs or audio files
+- Automatically generate summaries using AI
+- Clean, responsive UI built with Jinja2 templates
+- (Optional) Email subscription for updates
 
-## 📦 Tech Stack
+---
 
-- **Backend**: Flask, SQLAlchemy, Python
-- **Frontend**: HTML5, Bootstrap 5 (via CDN)
-- **AI**: OpenAI Whisper (transcription), GPT (summarisation)
-- **Mailing**: Mailchimp Campaign & Audience APIs
-- **Database**: SQLite
+## 🗂️ Project Structure
 
-## 🛠 Folder Structure
-
+```
 podcast_summariser/
-├── app.py # Main Flask app
-├── config.py # API tokens & configuration
-├── templates/ # Jinja2 HTML templates
-│ ├── base.html
-│ ├── index.html
-│ └── subscribe.html
-└── static/css/ # (Optional) Custom styles
+├── app.py              # Main Flask application entry point
+├── config.py           # Stores API tokens and configuration variables
+├── templates/          # Jinja2 HTML templates
+│   ├── base.html       # Base layout for pages
+│   ├── index.html      # Home page with podcast upload/form
+│   └── subscribe.html  # Subscription or newsletter sign-up page
+└── static/css/         # (Optional) Custom CSS styles
+```
+
+---
+
+## 🛠️ Setup Instructions
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/yourusername/podcast_summariser.git
+cd podcast_summariser
+```
+
+2. **Create a virtual environment**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
+3. **Install dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+4. **Add your API keys to `config.py`**
+
+Example:
+
+```python
+# config.py
+OPENAI_API_KEY = "your-api-key-here"
+```
+
+5. **Run the app**
+
+```bash
+python app.py
+```
+
+Visit `http://localhost:5000` in your browser.
+
+---
+
+## 📦 Dependencies
+
+- Flask
+- Requests
+- OpenAI API (or other summarisation services)
+- (Optional) Flask-Mail or similar for subscriptions
+
+---
+
+## 💡 Notes
+
+- For PDF output or advanced text extraction, consider integrating libraries like `PyMuPDF`, `pdfplumber`, or `pydub` for audio processing.
+- DocuSign or similar services can be integrated for signature workflows if needed.
+
+---
+
+## 📬 Future Features
+
+- Podcast transcription support
+- User authentication
+- Summary history & downloads
+- Export summaries to PDF or email
+
+---
+
+## 🧾 License
+
+MIT License. See `LICENSE` for details.
