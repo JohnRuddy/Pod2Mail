@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+  <h1 class="mt-4">Welcome to Podcast2Email</h1>
+  <p class="lead">
+    This platform allows you to subscribe to your favorite podcasts and receive new episodes directly in your email inbox.
+  </p>
+  <hr>
+  <h2>Available Podcasts</h2>
+  <p>Select a podcast from the list below to learn more or subscribe.</p>
+  <ul class="list-group">
+    {% for podcast in podcasts %}
+      <li class="list-group-item">
+        <strong>{{ podcast.title }}</strong><br>
+        <small>{{ podcast.rss_url }}</small>
+        <button class="btn btn-primary btn-sm mt-2">Subscribe</button>
+      </li>
+    {% endfor %}
+  </ul>
+  <hr>
+  <p class="text-muted">
+    Don't see your favorite podcast? <a href="/add-podcast">Click here to add it!</a>
+  </p>
+</div>
+{% endblock %}
