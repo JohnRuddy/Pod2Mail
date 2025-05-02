@@ -1,39 +1,43 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Load Podcast</h1>
-    <form method="POST" action="/load_podcast">
-        <label for="rss_url">Enter Podcast RSS URL:</label>
-        <input type="url" id="rss_url" name="rss_url" required>
-        <button type="submit">Load Podcast</button>
-    </form>
-
-    {% if episodes %}
-        <h2>Latest Episodes</h2>
-        <form method="POST" action="/summarize">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Select</th>
-                        <th>Title</th>
-                        <th>Published Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {% for episode in episodes %}
-                        <tr>
-                            <td>
-                                <input type="checkbox" name="selected_episodes" value="{{ episode['id'] }}" class="episode-checkbox">
-                            </td>
-                            <td>{{ episode['title'] }}</td>
-                            <td>{{ episode['published_date'] }}</td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-            <button type="submit" id="summarize-button" disabled>Summarize Selected Episodes</button>
+    <div class="container">
+        <h1 class="mt-4">Load Podcast</h1>
+        <form method="POST" action="/load_podcast" class="mb-4">
+            <div class="mb-3">
+                <label for="rss_url" class="form-label">Enter Podcast RSS URL:</label>
+                <input type="url" id="rss_url" name="rss_url" class="form-control" placeholder="Enter RSS feed URL" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Load Podcast</button>
         </form>
-    {% endif %}
+
+        {% if episodes %}
+            <h2>Latest Episodes</h2>
+            <form method="POST" action="/summarize">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Select</th>
+                            <th>Title</th>
+                            <th>Published Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for episode in episodes %}
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="selected_episodes" value="{{ episode['id'] }}" class="episode-checkbox">
+                                </td>
+                                <td>{{ episode['title'] }}</td>
+                                <td>{{ episode['published_date'] }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <button type="submit" id="summarize-button" class="btn btn-success" disabled>Summarize Selected Episodes</button>
+            </form>
+        {% endif %}
+    </div>
 
     <script>
         const checkboxes = document.querySelectorAll('.episode-checkbox');
