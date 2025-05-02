@@ -31,6 +31,8 @@
                                 <td>{{ episode['title'] }}</td>
                                 <td>{{ episode['published_date'] }}</td>
                             </tr>
+                            <input type="hidden" name="episodes[{{ loop.index0 }}][id]" value="{{ episode['id'] }}">
+                            <input type="hidden" name="episodes[{{ loop.index0 }}][audio_url]" value="{{ episode['audio_url'] }}">
                         {% endfor %}
                     </tbody>
                 </table>
