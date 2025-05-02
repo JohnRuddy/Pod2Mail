@@ -8,7 +8,7 @@
                 {% for summary in summaries %}
                     <li class="list-group-item">
                         <h5>Episode ID: {{ summary.episode_id }}</h5>
-                        <a href="{{ url_for('download_file', filename=summary.file_path) }}" class="btn btn-primary">Download Summary</a>
+                        <p>{{ summary.summary }}</p>
                     </li>
                 {% endfor %}
             </ul>
