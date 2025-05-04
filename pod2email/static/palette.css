@@ -1,0 +1,105 @@
+:root {
+    /* Monochrome base tones */
+    --bs-body-bg: #f9f9f9;
+    --bs-body-color: #212529;
+    --bs-dark: #212529;
+    --bs-light: #ffffff;
+    --bs-secondary: #6c757d;
+    --bs-border-color: #dee2e6;
+  
+    --bs-font-sans-serif: 'Inter', 'Segoe UI', sans-serif;
+  
+    /* Sizing and rounding */
+    --bs-border-radius: 0.75rem;
+    --bs-border-radius-sm: 0.5rem;
+    --bs-border-radius-lg: 1rem;
+  
+    /* Shadows */
+    --mono-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --mono-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* General styles */
+  body {
+    background-color: var(--bs-body-bg);
+    color: var(--bs-body-color);
+    font-family: var(--bs-font-sans-serif);
+  }
+  
+  /* Navbar */
+  .navbar {
+    background-color: var(--bs-light);
+    border-bottom: 1px solid var(--bs-border-color);
+    color: var(--bs-body-color);
+  }
+  
+  .navbar a {
+    color: var(--bs-body-color);
+  }
+  
+  .navbar a:hover {
+    color: var(--bs-secondary);
+  }
+  
+  /* Hero section */
+  .hero {
+    background-color: #ffffff;
+    color: var(--bs-dark);
+    text-align: center;
+    padding: 5rem 2rem;
+    border-radius: var(--bs-border-radius);
+    box-shadow: var(--mono-shadow);
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+  
+  .hero .btn {
+    margin-top: 1.5rem;
+  }
+  
+  /* Cards */
+  .card {
+    background-color: #ffffff;
+    color: var(--bs-dark);
+    border: 1px solid var(--bs-border-color);
+    border-radius: var(--bs-border-radius);
+    box-shadow: var(--mono-shadow);
+    transition: box-shadow 0.2s ease;
+  }
+  
+  .card:hover {
+    box-shadow: var(--mono-shadow-hover);
+  }
+  
+  /* Buttons */
+  .btn {
+    border-radius: 0.5rem;
+    font-weight: 500;
+  }
+  
+  /* Forms */
+  .form-control {
+    background-color: #ffffff;
+    color: var(--bs-dark);
+    border: 1px solid var(--bs-border-color);
+  }
+  
+  .form-control:focus {
+    border-color: var(--bs-dark);
+    box-shadow: 0 0 0 0.2rem rgba(33, 37, 41, 0.1);
+    background-color: #fff;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #f1f1f1;
+    color: #6c757d;
+    padding: 2rem 1rem;
+    font-size: 0.875rem;
+    text-align: center;
+    border-top: 1px solid var(--bs-border-color);
+  }
+  

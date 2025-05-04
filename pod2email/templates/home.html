@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}Pod2Mail - Your Podcast to Email Solution{% endblock %}
+
+{% block content %}
+  <nav class="navbar navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="/">Pod2Mail</a>
+      <a href="#" class="btn btn-outline-primary">Login</a>
+    </div>
+  </nav>
+
+  <section class="hero mt-5 pt-5">
+    <div class="container text-center py-5">
+      <h1 class="display-4 fw-bold">Podcasts Delivered Straight to Your Inbox</h1>
+      <p class="lead">Subscribe to your favorite shows and get episodes as text or audio, emailed to you automatically.</p>
+      <a href="{{ url_for('load_podcast') }}" class="btn btn-primary btn-lg mt-3">Get Started</a>
+    </div>
+  </section>
+
+  <section class="features py-5">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-5">Why Choose Pod2Mail?</h2>
+      <div class="row g-4">
+        <div class="col-md-4 text-center">
+          <div class="feature-icon mb-3">📝</div>
+          <h5 class="fw-bold">Podcast Summaries</h5>
+          <p>Upload your favorite podcast RSS feed, and we'll summarize the episodes into concise, easy-to-read bullet points.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="feature-icon mb-3">🔊</div>
+          <h5 class="fw-bold">Audio Transcription</h5>
+          <p>Our advanced AI transcribes podcast episodes, ensuring you never miss a detail, even when you can't listen.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <div class="feature-icon mb-3">📧</div>
+          <h5 class="fw-bold">Email Delivery</h5>
+          <p>Receive podcast summaries directly in your inbox, making it easy to stay informed on the go.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works bg-light py-5">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-5">How It Works</h2>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <h5 class="fw-bold">1. Load Your Podcast</h5>
+          <p>Enter the RSS feed URL of your favorite podcast to get started.</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="fw-bold">2. Select Episodes</h5>
+          <p>Choose the episodes you want to transcribe and summarize.</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="fw-bold">3. Get Summaries</h5>
+          <p>Receive detailed summaries and transcriptions in your inbox or download them as Word documents.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section text-center py-5 bg-white">
+    <div class="container">
+      <h2 class="fw-bold">Ready to Get Started?</h2>
+      <p class="lead">Transform the way you consume podcasts today.</p>
+      <a href="{{ url_for('load_podcast') }}" class="btn btn-primary btn-lg">Start Now</a>
+    </div>
+  </section>
+{% endblock %}
